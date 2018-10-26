@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-home',
@@ -8,12 +9,18 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private route: Router) { }
+  constructor(private route: Router, private authService: AuthService) { }
 
   ngOnInit() {
-  }
+  } 
   onLoadServer(id: number){
     this.route.navigate(['/servers', id, 'edit'], {queryParams: {allowEdit: '1'}, fragment: 'loading'});  //first segment of the path absolute path
+  }
+  onLogIn(){
+    return this.authService.login();
+  }
+  onLogOut(){
+    return this.authService.logout();
   }
 
 }
