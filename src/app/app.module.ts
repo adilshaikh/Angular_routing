@@ -17,6 +17,7 @@ import { AuthService } from './auth.service';
 import { canDeactivateGuard } from './servers/edit/can-deactivate-guard.service';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { serverResolver } from './servers/server/server-resolver.service';
+import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { serverResolver } from './servers/server/server-resolver.service';
     ServerComponent,
     UserComponent,
     PageNotFoundComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    RecipeStartComponent
   ],
   imports: [
     BrowserModule,
